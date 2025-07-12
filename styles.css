@@ -1,0 +1,242 @@
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+dialog {
+  position: fixed;
+  top: 10%;
+  left: 50%;            /* Punto de referencia horizontal */
+  transform: translateX(-50%);  /* Mueve el diálogo a la izquierda la mitad de su ancho */
+  width: 70vw;          /* Ancho relativo al viewport ancho */
+  max-width: 500px;     /* Máximo ancho en px (puedes ajustar) */
+  border: none;
+  border-radius: 2vh;
+  padding: 2rem;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: 0 0 10vh rgba(0, 0, 0, 0.5);
+}
+.dialog {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #EAEAEA;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: sans-serif;
+  margin: 0; /* aseguramos cero margen */
+}
+
+button {
+  background: linear-gradient(145deg, #4b2e2e, #663f3f); /* Degradado sutil */
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 50px; /* Forma de burbuja */
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), 
+            -4px -4px 10px rgba(255, 255, 255, 0.1); /* Efecto de elevación */
+}
+button:hover {
+  background: linear-gradient(145deg,  #331f1f, #663f3f); /* Invertir degradado */
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.25), 
+            -6px -6px 12px rgba(255, 255, 255, 0.15);
+}
+button:active {
+  transform: scale(1.99); /* Efecto de presión */
+}
+.profile-img {
+  width: 30vh;
+  height: 30vh;
+}
+header, label, select{
+  padding: 1rem;
+  background-color: #4b2e2e;
+  text-align: center;
+  
+}
+.sidebar{
+  top: 0;
+  left: 0;
+  width: 20vh;
+  background-color: #3a1f1f;;
+  padding: 0.1rem;
+  z-index: 1000;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  font-size: 2vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style:italic;
+}
+
+header img {
+  width: 9vh;
+  height: 9vh;
+  vertical-align: middle;
+}
+header h1 {
+  font-size: 2.5em;
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  color: #EAEAEA;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header h2 {
+  font-size: 2vh;
+  margin: 0;
+  font-style:italic;
+  vertical-align: middle;
+  color: #EAEAEA;
+  text-align: right;
+}
+nav, select, option {
+  background-color: #422323;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 5px 0;
+}
+nav a, select, option {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+nav a:hover {
+  color: #ffd700;
+}
+select:hover {
+  color: #ffd700;
+}
+option:hover {
+  color: #ffd700;
+}
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+}
+.producto {
+  width: 250px;
+  text-align: center;
+}
+.producto img, .fsecos img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+.producto img:hover {
+  transform: scale(1.1);
+}
+.fsecos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+  width: 250px;
+  text-align: center;
+}
+
+.fsecos img:hover {
+  transform: scale(1.1);
+}
+.descripcion {
+  margin-top: 10px;
+  font-size: 1em;
+}
+.sobre-nosotros {
+  padding: 40px;
+  text-align: center;
+  background-color: #EAEAEA;
+}
+.sobre-nosotros h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.sobre-nosotros p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+footer {
+  background-color: #4b2e2e;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+.version{
+  text-align: right;
+  font-size: 0.9vh;
+  
+
+}
+.carrusel {
+  position: relative;
+  width: 80%;
+  margin: 50px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carrusel img {
+  width: 50vh;
+  height: 50vh;
+  transition: transform 0.4s ease;
+}
+
+.carrusel img:hover {
+  transform: scale(1.4);
+}
+.contacto {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+.contacto a {
+  color: white;
+  font-size: 1.5em;
+  transition: transform 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+.contacto a:hover {
+  transform: translateY(-8px);
+  color: #ffd700;
+}
+
+.zoomed {
+  transform: scale(2);
+  z-index: 10;
+  position: relative;
+}
+
+.main-content {
+  margin-left: 250px; /* Desplazar el contenido a la derecha */
+  padding: 20px;
+    flex: 1;
+  padding: 1rem;
+}
+.layout {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+}
