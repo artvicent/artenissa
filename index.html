@@ -21,14 +21,13 @@
 </header>
 <div class="marquee-container">
     <div class="marquee-content">
-      En artenissa no solo hacemos chorizo… todo lo llevamos al siguiente nivel. <b>Atención</b> 🎉¡Pronto tendremos nuevos productos!🎉
+      En Artenissa no solo hacemos chorizo… todo lo llevamos al siguiente nivel. <b>Atención</b> 🎉¡Pronto tendremos nuevos productos!🎉 donde cada bocado cuenta una historia.
     </div>
   </div>
   <!--<button id="menuToggle" class="menu-btn"></button>-->
   <nav id="sidebar" class="sidebar">
     <!--listado de productos-->
     <ul>
-      <!--<option value="none">Seleccione un Producto</option>-->
       <li><a href="#productos">Charcuteria</a></li>
       <!--<li><a href="#fsecos">Frutos Secos</a></li>-->
       <li><a href="#sobre">Sobre Nosotros</a></li>
@@ -102,51 +101,37 @@
     </div>
   </section>-->
   </section>
-  <div class="carrusel">
-    <img id="carrusel-img">
+  <div class="carousel" id="carousel">
+    <img src="CAR/1.png" class="active" />
+    <img src="CAR/2.png" />
+    <img src="CAR/3.png" />
+    <img src="CAR/4.png" />
+    <img src="CAR/5.png" />
+    <img src="CAR/6.png" />
+    <img src="CAR/7.png" />
+    <img src="CAR/8.jpg" />
+    <img src="CAR/9.png" />
+    <img src="IMG/logo artenissa.png" />
+    <img src="CAR/10.jpeg" />
+    <img src="CAR/11.jpeg" />
+    <img src="CAR/12.jpeg" />
+    <img src="CAR/13.jpeg" />
+    <img src="CAR/14.jpeg" />
+    <img src="CAR/15.jpeg" />
+    <img src="CAR/16.jpeg" />
+    <img src="CAR/17.jpeg" />
+    <img src="CAR/18.jpeg" />
+    <img src="CAR/19.jpg" />
+    <img src="CAR/20.jpg" />
+    <img src="IMG/logo artenissa.png" />
   </div>
 
-  <script>
-    const imagenes = [
-      'IMG/jamon1.jpg',
-      'IMG/jamon_2.jpg',
-      'IMG/Choriespañol1.jpeg',
-      'IMG/jamon4.jpg',
-      'IMG/jamon5.jpg',
-      'IMG/Choriespañol2.jpeg',
-      'IMG/jamon6.jpg',
-      'IMG/salchiajo2.jpg',
-      'IMG/choriajo3.jpg',
-      'IMG/salchiajo_y_pimenton_2.jpg',
-      'IMG/Choriespalol3.jpeg',
-      'IMG/logo artenissa.png'
-    ];
-
-    const carruselImg = document.getElementById('carrusel-img');
-    let index = 0;
-    let intervalo;
-
-    function iniciarCarrusel() {
-      intervalo = setInterval(() => {
-        index = (index + 1) % imagenes.length;
-        carruselImg.src = imagenes[index];
-      }, 1300);
-    }
-
-    function detenerCarrusel() {
-      clearInterval(intervalo);
-    }
-
-    carruselImg.addEventListener('mouseenter', detenerCarrusel);
-    carruselImg.addEventListener('mouseleave', iniciarCarrusel);
-
-    iniciarCarrusel();
-  </script>
+  <div class="dots" id="dots"></div>
 
   <section id="sobre" class="sobre-nosotros">
     <h2>Sobre Nosotros</h2>
     <p>
-      En Charcutería Artenissa nos especializamos en ofrecer productos cárnicos artesanales de alta calidad, elaborados con las mejores carnes y procesos tradicionales. Nuestra pasión por la excelencia nos ha llevado a convertirnos en una opción confiable y sabrosa para nuestros clientes. ¡Disfruta del verdadero sabor artesanal!
+      En Charcutería Artenissa Desde el 2023 nos especializamos en ofrecer productos cárnicos artesanales de alta calidad, elaborados con las mejores carnes y procesos tradicionales. Nuestra pasión por la excelencia nos ha llevado a convertirnos en una opción confiable y sabrosa para nuestros clientes. ¡Disfruta del verdadero sabor artesanal!
     </p>
   </section>
 
@@ -173,7 +158,7 @@
         <div class="profile">
             <img src="IMG/logo artenissa.png" class="profile-img">
             <h1 class="name">Bienvenidos</h1>
-            <p class="description">En Charcutería Artenissa nos especializamos en ofrecer productos cárnicos artesanales de alta calidad, elaborados con las mejores carnes y procesos tradicionales. Nuestra pasión por la excelencia nos ha llevado a convertirnos en una opción confiable y sabrosa para nuestros clientes. ¡Disfruta del verdadero sabor artesanal!
+            <p class="description">En Artenissa, convertimos la tradición familiar en arte gastronómico. Desde 2023, elaboramos charcutería artesanal con carnes selectas y recetas heredadas, respetando el tiempo y la esencia del buen gusto. Cada pieza es una experiencia sensorial pensada para quienes reconocen la autenticidad en cada aroma, textura y sabor.<br><em>Donde cada bocado cuenta una historia.</em>
         <form method="dialog">
         <button class="modal__close-button">Visita nuestros productos</button>
         </form>

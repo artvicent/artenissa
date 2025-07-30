@@ -10,25 +10,27 @@ dialog {
   max-width: 500px;     /* Máximo ancho en px (puedes ajustar) */
   border: none;
   border-radius: 2vh;
-  padding: 2rem;
+  padding: 0.5rem;
   z-index: 1000;
   background-color: white;
   box-shadow: 0 0 10vh rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  margin: 0 auto;
 }
 .dialog {
   text-align: center;
   font-family: 'Arial', sans-serif;
 }
 body {
-  margin: 0;
+  margin: 0; /* aseguramos cero margen */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #EAEAEA;
   color: #333;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: sans-serif;
-  margin: 0; /* aseguramos cero margen */
+  padding: 0;
+  justify-content: center;
 }
 
 button {
@@ -204,28 +206,82 @@ footer {
 .version{
   text-align: right;
   font-size: 0.9vh;
-  
-
 }
-.carrusel {
+* {
+  box-sizing: border-box;
+}
+
+.carousel {
   position: relative;
-  width: 80%;
-  margin: 50px auto;
+  width: 90%;
+  max-width: 800px;
+  aspect-ratio: 16 / 10;
   overflow: hidden;
-  border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
 
-.carrusel img {
-  width: 50vh;
-  height: 50vh;
-  transition: transform 0.4s ease;
+.carousel img {
+  position: absolute;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  opacity: 0;
+  transform: scale(0.25) translateX(0);
+  max-height: 100%;
+  max-width: 100%;
+  z-index: 1;
 }
 
-.carrusel img:hover {
-  transform: scale(1.4);
+.carousel img.prev {
+  opacity: 0.6;
+  transform: scale(0.25) translateX(-200%);
+  z-index: 2;
+}
+
+.carousel img.next {
+  opacity: 0.6;
+  transform: scale(0.25) translateX(200%);
+  z-index: 2;
+}
+
+.carousel img.active {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+  z-index: 3;
+}
+
+.dots {
+  margin-top: 15px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.dots span {
+  width: 12px;
+  height: 12px;
+  background-color: #999;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dots span.active {
+  background-color: #333;
+}
+
+@media (max-width: 600px) {
+  .controls button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    min-width: 100px;
+  }
+
+  .carousel {
+    aspect-ratio: 4 / 3;
+  }
 }
 .contacto {
   display: flex;

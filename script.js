@@ -34,3 +34,72 @@ if (typeof dialog.showModal === "function") {
 } else {
   alert("Tu navegador no soporta dialog modal");
 }
+const carousel = document.getElementById('carousel');
+const images = carousel.getElementsByTagName('img');
+const dotsContainer = document.getElementById('dots');
+let currentIndex = 0;
+let autoplayInterval = null;
+
+function createDots() {
+  for (let i = 0; i < images.length; i++) {
+    const dot = document.createElement('span');
+    dot.addEventListener('click', () => {
+      currentIndex = i;
+      updateCarousel();
+      restartAutoplay();
+    });
+    dotsContainer.appendChild(dot);
+  }
+}
+
+function updateDots() {
+  const dots = dotsContainer.getElementsByTagName('span');
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.remove('active');
+  }
+  dots[currentIndex].classList.add('active');
+}
+
+function updateCarousel() {
+  for (let i = 0; i < images.length; i++) {
+    images[i].classList.remove('active', 'prev', 'next');
+    images[i].style.transform = 'scale(0.04)';
+    images[i].style.opacity = '0.3';
+  }
+
+  const prevIndex = (currentIndex - 1 + images.length) % images.length;
+  const nextIndex = (currentIndex + 1) % images.length;
+
+  images[prevIndex].classList.add('prev');
+  images[nextIndex].classList.add('next');
+  images[currentIndex].classList.add('active');
+  images[currentIndex].style.transform = 'scale(1)';
+  images[currentIndex].style.opacity = '1';
+
+  updateDots();
+}
+
+function next() {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateCarousel();
+}
+
+function prev() {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateCarousel();
+}
+
+function startAutoplay() {
+  autoplayInterval = setInterval(() => {
+    next();
+  }, 4000);
+}
+
+function restartAutoplay() {
+  clearInterval(autoplayInterval);
+  startAutoplay();
+}
+
+createDots();
+updateCarousel();
+startAutoplay();
